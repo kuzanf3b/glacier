@@ -10,7 +10,6 @@
       </div>
       <div class="navbar-end">
         <a href="/pallete" class="navbar-item">Pallete</a>
-        <p class="navbar-item">|</p>
         <input type="text" placeholder="Search" class="navbar-item search" />
       </div>
     </div>
@@ -39,18 +38,30 @@
 
 .navbar-item {
   text-decoration: none;
-  margin: 0 1rem;
-  color: #D8E4ED;
+  margin: 0 0.5rem;
+  color: #E0E0ED;
+}
+
+.navbar-item:active {
+  border: solid 2px #F5C2E7;
 }
 
 .navbar-start .navbar-item {
+  border-radius: 6px;
+  padding: 0.5rem 1rem;
   font-size: 1.2rem;
   font-weight: bold;
 }
 
 .navbar-end .navbar-item {
+  border-radius: 6px;
+  padding: 0.5rem 1rem;
   font-size: 1rem;
   font-weight: 600;
+}
+
+.navbar-end .navbar-item:hover {
+  background-color: #1A1A27;
 }
 
 .navbar-end .search {
@@ -58,12 +69,13 @@
   width: 110px;
   padding: 0.5rem;
   border: none;
-  border-radius: 4px;
-  background-color: #1A1A27;
-  color: #D8E4ED;
+  border-radius: 6px;
+  background-color: #232333;
+  color: #E0E0ED;
+  border: solid 1px #5B5B7E;
 }
 
 .navbar-end .search::placeholder {
-  color: #D8E4ED;
+  color: #E0E0ED;
 }
 </style>
