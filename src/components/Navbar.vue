@@ -74,7 +74,7 @@
   .search {
     font-weight: $font-weight-regular;
     width: 110px;
-    padding: $spacing-sm;
+    padding: $spacing-xs $spacing-sm;
     border: 1px solid var(--color-muted);
     border-radius: $radius-md;
     background-color: var(--color-overlay);

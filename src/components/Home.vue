@@ -41,7 +41,7 @@
     text-decoration: none;
     padding: $spacing-md $spacing-xl;
     background-color: var(--color-surface);
-    border-radius: $radius-xl;
+    border-radius: $radius-pill;
     transition: background-color $transition-base;
 
     &:hover {

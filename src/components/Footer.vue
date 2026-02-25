@@ -5,8 +5,9 @@
 <template>
   <footer>
     <p>Copyright &copy; 2024 Glacier</p>
-    <a class="icon" href="https://github.com/kuzanf3b/glacier.git"><img src="../assets/svg/github.svg" alt="github"></a>
-  </footer>
+    <a class="icon" href="https://github.com/kuzanf3b/glacier.git"><img src="../assets/svg/github.svg"
+        alt="github"></a>
+  </footer> 
 </template>
 
 <style scoped lang="scss">
@@ -19,7 +20,7 @@ footer {
 
   p {
     margin-left: $sidebar-width;
-    color: var(--color-text);
+    color: var(--color-subtle);
     font-size: $font-size-sm;
     font-weight: $font-weight-semibold;
   }
