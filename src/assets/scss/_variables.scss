@@ -1,0 +1,140 @@
+// Glacier - Design Tokens / Variables
+
+// --- Glacier Zero (Dark) [Default] ---
+:root,
+[data-theme="zero"] {
+  // UI Base
+  --color-base:       #13131C;    // Abyss
+  --color-surface:    #1A1A27;    // Frost
+  --color-overlay:    #232333;    // Glacier
+  --color-muted:      #5B5B7E;    // Vapor
+  --color-subtle:     #8E8EAF;    // Mist
+  --color-text:       #E0E0ED;    // Crystal
+
+  // Accent
+  --color-cyanide:    #89DCEB;
+  --color-amber:      #F9E2AF;
+  --color-petal:      #F5C2E7;
+  --color-leaf:       #A6E3A1;
+  --color-lilac:      #CBA6F7;
+  --color-coral:      #F38BA8;
+
+  // Highlight
+  --color-highlight-low:   #1E1E2E;   // Aura Low
+  --color-highlight-med:   #313244;   // Aura Med
+  --color-highlight-high:  #45475A;   // Aura High
+}
+
+// --- Glacier Mist (Medium) ---
+[data-theme="mist"] {
+  // UI Base
+  --color-base:       #1E1E2E;    // Haze
+  --color-surface:    #252535;    // Cloud
+  --color-overlay:    #2F2F45;    // Spirit
+  --color-muted:      #6C7086;    // Ethereal
+  --color-subtle:     #9399B2;    // Ghost
+  --color-text:       #C2C6D9;    // Flow
+
+  // Accent
+  --color-cyanide:    #89D1DD;
+  --color-amber:      #E5D5B1;
+  --color-petal:      #E1B0D0;
+  --color-leaf:       #B4D5B0;
+  --color-lilac:      #C2B3E1;
+  --color-coral:      #E0A3AD;
+
+  // Highlight
+  --color-highlight-low:   #2A2A3C;   // Veil Low
+  --color-highlight-med:   #3E3E56;   // Veil Med
+  --color-highlight-high:  #525270;   // Veil High
+}
+
+// --- Glacier Peak (Light) ---
+[data-theme="peak"] {
+  // UI Base
+  --color-base:       #F2F2F7;    // Summit
+  --color-surface:    #E6E6F0;    // Slope
+  --color-overlay:    #D9D9E8;    // Ridge
+  --color-muted:      #9494B8;    // Snow
+  --color-subtle:     #62628A;    // Pebble
+  --color-text:       #1A1A27;    // Ink
+
+  // Accent
+  --color-cyanide:    #179299;
+  --color-amber:      #A67C00;
+  --color-petal:      #B31E8D;
+  --color-leaf:       #40A02B;
+  --color-lilac:      #7287FD;
+  --color-coral:      #D20F39;
+
+  // Highlight
+  --color-highlight-low:   #E8E8F4;   // Ice Low
+  --color-highlight-med:   #D0D0E8;   // Ice Med
+  --color-highlight-high:  #B8B8D8;   // Ice High
+}
+
+// --- Typography ---
+$font-family-base: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+$font-family-mono: 'Cascadia Code', 'Fira Code', monospace;
+
+$font-size-xs:   0.75rem;   // 12px
+$font-size-sm:   0.875rem;  // 14px
+$font-size-base: 1rem;      // 16px
+$font-size-md:   1.125rem;  // 18px
+$font-size-lg:   1.25rem;   // 20px
+$font-size-xl:   1.5rem;    // 24px
+$font-size-2xl:  2rem;      // 32px
+$font-size-3xl:  3rem;      // 48px
+$font-size-4xl:  5rem;      // 80px
+
+$font-weight-regular:  400;
+$font-weight-medium:   500;
+$font-weight-semibold: 600;
+$font-weight-bold:     700;
+
+$line-height-tight:  1.2;
+$line-height-base:   1.5;
+$line-height-loose:  1.75;
+
+// --- Spacing ---
+$spacing-xs:  0.25rem;  // 4px
+$spacing-sm:  0.5rem;   // 8px
+$spacing-md:  1rem;     // 16px
+$spacing-lg:  1.5rem;   // 24px
+$spacing-xl:  2rem;     // 32px
+$spacing-2xl: 3rem;     // 48px
+$spacing-3xl: 5rem;     // 80px
+
+// --- Border Radius ---
+$radius-sm:   4px;
+$radius-md:   6px;
+$radius-lg:   12px;
+$radius-xl:   20px;
+$radius-pill:  9999px;
+
+// --- Shadows ---
+$shadow-sm:  0 1px 2px rgba(0, 0, 0, 0.3);
+$shadow-md:  0 4px 8px rgba(0, 0, 0, 0.3);
+$shadow-lg:  0 8px 24px rgba(0, 0, 0, 0.4);
+
+// --- Transitions ---
+$transition-fast:   0.15s ease;
+$transition-base:   0.3s ease;
+$transition-slow:   0.5s ease;
+
+// --- Z-Index ---
+$z-dropdown:  100;
+$z-sticky:    200;
+$z-overlay:   300;
+$z-modal:     400;
+$z-toast:     500;
+
+// --- Breakpoints ---
+$breakpoint-sm:  576px;
+$breakpoint-md:  768px;
+$breakpoint-lg:  992px;
+$breakpoint-xl:  1200px;
+
+// --- Layout ---
+$container-max-width: 1200px;
+$sidebar-width: 80px;

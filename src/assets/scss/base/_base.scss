@@ -1,0 +1,79 @@
+// Glacier - Base Styles
+
+@use "../variables" as *;
+@use "../mixins" as *;
+
+:root {
+  color: var(--color-text);
+  font-family: $font-family-base;
+  font-size: $font-size-base;
+  line-height: $line-height-base;
+}
+
+body {
+  background-color: var(--color-base);
+  color: var(--color-text);
+  min-height: 100vh;
+}
+
+::selection {
+  background-color: var(--color-highlight-high);
+  color: var(--color-text);
+}
+
+// --- Links ---
+a {
+  color: var(--color-cyanide);
+  transition: color $transition-fast;
+
+  &:hover {
+    opacity: 0.85;
+  }
+}
+
+// --- Buttons (base) ---
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+// --- Inputs (base) ---
+input,
+textarea {
+  background-color: var(--color-overlay);
+  border: 1px solid var(--color-muted);
+  border-radius: $radius-md;
+  padding: $spacing-sm $spacing-md;
+  color: var(--color-text);
+  transition: border-color $transition-fast, box-shadow $transition-fast;
+
+  &::placeholder {
+    color: var(--color-muted);
+  }
+
+  &:focus {
+    outline: none;
+    border-color: var(--color-petal);
+    box-shadow: 0 0 0 2px rgba(245, 194, 231, 0.15);
+  }
+}
+
+// --- Code ---
+code {
+  font-family: $font-family-mono;
+  font-size: $font-size-sm;
+  background-color: var(--color-overlay);
+  padding: 0.15em 0.4em;
+  border-radius: $radius-sm;
+}
+
+// --- Scrollbar ---
+body {
+  @include custom-scrollbar;
+}
+
+// --- Images ---
+img {
+  height: auto;
+}

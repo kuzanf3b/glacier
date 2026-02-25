@@ -1,0 +1,47 @@
+// Glacier - Spacing Utilities
+
+@use "../variables" as *;
+
+// Spacing scale map
+$_spacing-map: (
+  "0":    0,
+  "xs":   $spacing-xs,
+  "sm":   $spacing-sm,
+  "md":   $spacing-md,
+  "lg":   $spacing-lg,
+  "xl":   $spacing-xl,
+  "2xl":  $spacing-2xl,
+  "3xl":  $spacing-3xl,
+  "auto": auto,
+);
+
+// --- Margin ---
+@each $key, $value in $_spacing-map {
+  .m-#{$key}  { margin: $value; }
+  .mt-#{$key} { margin-top: $value; }
+  .mr-#{$key} { margin-right: $value; }
+  .mb-#{$key} { margin-bottom: $value; }
+  .ml-#{$key} { margin-left: $value; }
+  .mx-#{$key} { margin-inline: $value; }
+  .my-#{$key} { margin-block: $value; }
+}
+
+// --- Padding ---
+@each $key, $value in $_spacing-map {
+  @if $key != "auto" {
+    .p-#{$key}  { padding: $value; }
+    .pt-#{$key} { padding-top: $value; }
+    .pr-#{$key} { padding-right: $value; }
+    .pb-#{$key} { padding-bottom: $value; }
+    .pl-#{$key} { padding-left: $value; }
+    .px-#{$key} { padding-inline: $value; }
+    .py-#{$key} { padding-block: $value; }
+  }
+}
+
+// --- Gap ---
+@each $key, $value in $_spacing-map {
+  @if $key != "auto" {
+    .gap-#{$key} { gap: $value; }
+  }
+}
