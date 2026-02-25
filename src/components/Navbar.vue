@@ -6,6 +6,7 @@
   <nav>
     <div class="navbar">
       <div class="navbar-start">
+        <a href="/" class="icon"><img src="../assets/svg/ice.svg" alt="ice"></a>
         <a href="/" class="navbar-item">Glacier</a>
       </div>
       <div class="navbar-end">
@@ -31,9 +32,20 @@
 
 .navbar-start,
 .navbar-end {
+  padding: 0 1rem;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.icon img {
+  width: 24px;
 }
 
 .navbar-item {
@@ -42,13 +54,14 @@
   color: #E0E0ED;
 }
 
-.navbar-item:active {
-  border: solid 2px #F5C2E7;
+.navbar-start:active {
+  box-shadow: 0 0 0 2px #F5C2E7;
+  border-radius: 6px;
 }
 
-.navbar-start .navbar-item {
+.navbar-start .navbar-item,
+.icon {
   border-radius: 6px;
-  padding: 0.5rem 1rem;
   font-size: 1.2rem;
   font-weight: bold;
 }

@@ -5,7 +5,7 @@
 <template>
   <footer>
     <p>Copyright &copy; 2024 Glacier</p>
-    <a class="icon" href="https://github.com/kuzanf3b/glacier.git"><img src="../assets/github.svg" alt="github"></a>
+    <a class="icon" href="https://github.com/kuzanf3b/glacier.git"><img src="../assets/svg/github.svg" alt="github"></a>
   </footer>
 </template>
 
@@ -27,7 +27,7 @@ footer {
 footer p {
   margin-left: 80px;
   color: #E0E0ED;
-  font-size: 1rem;
+  font-size: 0.9rem;
   font-weight: 600;
 }
 

@@ -28,7 +28,7 @@
 
 .home h1 {
   width: 200px;
-  font-size: 6rem;
+  font-size: 5rem;
   color: #E0E0ED;
   margin-bottom: 1rem;
 }
