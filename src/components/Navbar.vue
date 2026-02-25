@@ -17,78 +17,70 @@
   </nav>
 </template>
 
-<style scoped>
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+<style scoped lang="scss">
 
 .navbar {
-  display: flex;
-  justify-content: space-between;
-  padding: 1rem;
+  @include flex-between;
+  padding: $spacing-md;
 }
 
 .navbar-start,
 .navbar-end {
-  padding: 0 1rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  @include flex-center;
+  padding: 0 $spacing-md;
 }
 
 .icon {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+  @include flex-center;
 
-.icon img {
-  width: 24px;
+  img {
+    width: 24px;
+  }
 }
 
 .navbar-item {
   text-decoration: none;
-  margin: 0 0.5rem;
-  color: #E0E0ED;
+  margin: 0 $spacing-sm;
+  color: var(--color-text);
 }
 
-.navbar-start:active {
-  box-shadow: 0 0 0 2px #F5C2E7;
-  border-radius: 6px;
+.navbar-start {
+  &:active {
+    box-shadow: 0 0 0 2px var(--color-petal);
+    border-radius: $radius-md;
+  }
+
+  .navbar-item {
+    border-radius: $radius-md;
+    font-size: $font-size-lg;
+    font-weight: $font-weight-bold;
+  }
 }
 
-.navbar-start .navbar-item,
-.icon {
-  border-radius: 6px;
-  font-size: 1.2rem;
-  font-weight: bold;
-}
+.navbar-end {
+  .navbar-item {
+    border-radius: $radius-md;
+    padding: $spacing-sm $spacing-md;
+    font-size: $font-size-base;
+    font-weight: $font-weight-semibold;
 
-.navbar-end .navbar-item {
-  border-radius: 6px;
-  padding: 0.5rem 1rem;
-  font-size: 1rem;
-  font-weight: 600;
-}
+    &:hover {
+      background-color: var(--color-surface);
+    }
+  }
 
-.navbar-end .navbar-item:hover {
-  background-color: #1A1A27;
-}
+  .search {
+    font-weight: $font-weight-regular;
+    width: 110px;
+    padding: $spacing-xs $spacing-sm;
+    border: 1px solid var(--color-muted);
+    border-radius: $radius-md;
+    background-color: var(--color-overlay);
+    color: var(--color-text);
 
-.navbar-end .search {
-  font-weight: 400;
-  width: 110px;
-  padding: 0.5rem;
-  border: none;
-  border-radius: 6px;
-  background-color: #232333;
-  color: #E0E0ED;
-  border: solid 1px #5B5B7E;
-}
-
-.navbar-end .search::placeholder {
-  color: #E0E0ED;
+    &::placeholder {
+      color: var(--color-text);
+    }
+  }
 }
 </style>

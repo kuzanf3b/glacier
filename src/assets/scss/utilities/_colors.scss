@@ -1,0 +1,38 @@
+// Glacier - Color Utilities
+
+// --- Text Color ---
+.text-base       { color: var(--color-text); }
+.text-subtle     { color: var(--color-subtle); }
+.text-muted      { color: var(--color-muted); }
+.text-cyanide    { color: var(--color-cyanide); }
+.text-amber      { color: var(--color-amber); }
+.text-petal      { color: var(--color-petal); }
+.text-leaf       { color: var(--color-leaf); }
+.text-lilac      { color: var(--color-lilac); }
+.text-coral      { color: var(--color-coral); }
+
+// --- Background Color ---
+.bg-base         { background-color: var(--color-base); }
+.bg-surface      { background-color: var(--color-surface); }
+.bg-overlay      { background-color: var(--color-overlay); }
+.bg-cyanide      { background-color: var(--color-cyanide); }
+.bg-amber        { background-color: var(--color-amber); }
+.bg-petal        { background-color: var(--color-petal); }
+.bg-leaf         { background-color: var(--color-leaf); }
+.bg-lilac        { background-color: var(--color-lilac); }
+.bg-coral        { background-color: var(--color-coral); }
+
+// --- Highlight Background ---
+.bg-highlight-low  { background-color: var(--color-highlight-low); }
+.bg-highlight-med  { background-color: var(--color-highlight-med); }
+.bg-highlight-high { background-color: var(--color-highlight-high); }
+
+// --- Border Color ---
+.border-base     { border-color: var(--color-muted); }
+.border-subtle   { border-color: var(--color-subtle); }
+.border-cyanide  { border-color: var(--color-cyanide); }
+.border-amber    { border-color: var(--color-amber); }
+.border-petal    { border-color: var(--color-petal); }
+.border-leaf     { border-color: var(--color-leaf); }
+.border-lilac    { border-color: var(--color-lilac); }
+.border-coral    { border-color: var(--color-coral); }

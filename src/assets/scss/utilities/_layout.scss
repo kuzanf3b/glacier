@@ -1,0 +1,111 @@
+// Glacier - Layout Utilities
+
+@use "../variables" as *;
+@use "../mixins" as *;
+
+// --- Display ---
+.block        { display: block; }
+.inline-block { display: inline-block; }
+.inline       { display: inline; }
+.hidden       { display: none; }
+.flex         { display: flex; }
+.inline-flex  { display: inline-flex; }
+.grid         { display: grid; }
+
+// --- Flex Direction ---
+.flex-row     { flex-direction: row; }
+.flex-col     { flex-direction: column; }
+.flex-row-rev { flex-direction: row-reverse; }
+.flex-col-rev { flex-direction: column-reverse; }
+
+// --- Flex Wrap ---
+.flex-wrap   { flex-wrap: wrap; }
+.flex-nowrap { flex-wrap: nowrap; }
+
+// --- Justify Content ---
+.justify-start   { justify-content: flex-start; }
+.justify-center  { justify-content: center; }
+.justify-end     { justify-content: flex-end; }
+.justify-between { justify-content: space-between; }
+.justify-around  { justify-content: space-around; }
+.justify-evenly  { justify-content: space-evenly; }
+
+// --- Align Items ---
+.items-start    { align-items: flex-start; }
+.items-center   { align-items: center; }
+.items-end      { align-items: flex-end; }
+.items-baseline { align-items: baseline; }
+.items-stretch  { align-items: stretch; }
+
+// --- Align Self ---
+.self-start   { align-self: flex-start; }
+.self-center  { align-self: center; }
+.self-end     { align-self: flex-end; }
+.self-stretch { align-self: stretch; }
+
+// --- Flex Grow / Shrink ---
+.grow    { flex-grow: 1; }
+.grow-0  { flex-grow: 0; }
+.shrink  { flex-shrink: 1; }
+.shrink-0 { flex-shrink: 0; }
+
+// --- Width ---
+.w-full   { width: 100%; }
+.w-screen { width: 100vw; }
+.w-auto   { width: auto; }
+.w-fit    { width: fit-content; }
+
+// --- Height ---
+.h-full   { height: 100%; }
+.h-screen { height: 100vh; }
+.h-auto   { height: auto; }
+.h-fit    { height: fit-content; }
+
+// --- Min / Max ---
+.min-h-screen { min-height: 100vh; }
+.max-w-full   { max-width: 100%; }
+
+// --- Position ---
+.relative { position: relative; }
+.absolute { position: absolute; }
+.fixed    { position: fixed; }
+.sticky   { position: sticky; }
+
+.inset-0 {
+  top: 0; right: 0; bottom: 0; left: 0;
+}
+
+// --- Overflow ---
+.overflow-hidden { overflow: hidden; }
+.overflow-auto   { overflow: auto; }
+.overflow-scroll { overflow: scroll; }
+
+// --- Container ---
+.container {
+  @include container;
+}
+
+// --- Border Radius ---
+.rounded-sm   { border-radius: $radius-sm; }
+.rounded-md   { border-radius: $radius-md; }
+.rounded-lg   { border-radius: $radius-lg; }
+.rounded-xl   { border-radius: $radius-xl; }
+.rounded-full { border-radius: $radius-pill; }
+.rounded-none { border-radius: 0; }
+
+// --- Opacity ---
+.opacity-0   { opacity: 0; }
+.opacity-25  { opacity: 0.25; }
+.opacity-50  { opacity: 0.5; }
+.opacity-75  { opacity: 0.75; }
+.opacity-100 { opacity: 1; }
+
+// --- Cursor ---
+.cursor-pointer  { cursor: pointer; }
+.cursor-default  { cursor: default; }
+.cursor-not-allowed { cursor: not-allowed; }
+
+// --- Transition ---
+.transition-fast { transition: all $transition-fast; }
+.transition-base { transition: all $transition-base; }
+.transition-slow { transition: all $transition-slow; }
