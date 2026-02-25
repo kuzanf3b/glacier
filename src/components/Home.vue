@@ -11,7 +11,6 @@
 </template>
 
 <style scoped lang="scss">
-@use "../assets/scss/variables" as *;
 
 .home {
   margin: 0 $sidebar-width;

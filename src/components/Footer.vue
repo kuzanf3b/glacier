@@ -11,8 +11,6 @@
 </template>
 
 <style scoped lang="scss">
-@use "../assets/scss/variables" as *;
-@use "../assets/scss/mixins" as *;
 
 footer {
   @include flex-between;

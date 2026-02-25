@@ -18,8 +18,6 @@
 </template>
 
 <style scoped lang="scss">
-@use "../assets/scss/variables" as *;
-@use "../assets/scss/mixins" as *;
 
 .navbar {
   @include flex-between;
