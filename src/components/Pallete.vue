@@ -63,6 +63,22 @@ function hexToHsl(hex: string) {
 function toProperCase(str: string) {
     return str.replace(/\b\w/g, l => l.toUpperCase());
 }
+
+const copiedKey = ref<string | null>(null);
+let copiedTimeout: ReturnType<typeof setTimeout> | null = null;
+
+async function copyToClipboard(value: string, key: string) {
+    try {
+        await navigator.clipboard.writeText(value);
+        copiedKey.value = key;
+        if (copiedTimeout) clearTimeout(copiedTimeout);
+        copiedTimeout = setTimeout(() => {
+            copiedKey.value = null;
+        }, 1500);
+    } catch (err) {
+        console.error('Failed to copy:', err);
+    }
+}
 </script>
 
 <template>
@@ -97,9 +113,21 @@ function toProperCase(str: string) {
                             <span class="color-swatch" :style="{ backgroundColor: color.hex }"></span>
                             <span class="color-name">{{ color.label }}</span>
                         </td>
-                        <td class="col-hex">{{ color.hex }}</td>
-                        <td class="col-rgb">{{ color.rgb }}</td>
-                        <td class="col-hsl">{{ color.hsl }}</td>
+                        <td class="col-hex">
+                            <p class="copyable" @click="copyToClipboard(color.hex, color.key + '-hex')">
+                                {{ copiedKey === color.key + '-hex' ? 'Copied!' : color.hex }}
+                            </p>
+                        </td>
+                        <td class="col-rgb">
+                            <p class="copyable" @click="copyToClipboard(color.rgb, color.key + '-rgb')">
+                                {{ copiedKey === color.key + '-rgb' ? 'Copied!' : color.rgb }}
+                            </p>
+                        </td>
+                        <td class="col-hsl">
+                            <p class="copyable" @click="copyToClipboard(color.hsl, color.key + '-hsl')">
+                                {{ copiedKey === color.key + '-hsl' ? 'Copied!' : color.hsl }}
+                            </p>
+                        </td>
                     </tr>
                 </tbody>
             </table>
@@ -221,12 +249,26 @@ section {
                     text-align: center;
                 }
 
-                &.col-rgb {
+                &.col-rgb,
+                &.col-hsl {
                     text-align: right;
                 }
 
-                &.col-hsl {
-                    text-align: right;
+                .copyable {
+                    cursor: pointer;
+                    padding: $spacing-xs $spacing-sm;
+                    border-radius: $radius-md;
+                    transition: all $transition-fast;
+                    margin: 0;
+                    display: inline-block;
+
+                    &:hover {
+                        background-color: var(--color-overlay);
+                    }
+
+                    &:active {
+                        transform: scale(0.96);
+                    }
                 }
             }
         }
