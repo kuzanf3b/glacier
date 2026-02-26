@@ -6,7 +6,7 @@
   <div class="home">
     <h1>Warmer Ice</h1>
     <p>Glacier is a color palette generator that helps you create beautiful color schemes for your projects.</p>
-    <a href="/pallete" class="btn">Discover →</a>
+    <router-link to="/pallete" class="btn">Discover →</router-link>
   </div>
 </template>
 
@@ -34,7 +34,7 @@
     margin-bottom: $spacing-xl;
   }
 
-  a {
+  .btn {
     font-weight: $font-weight-semibold;
     color: var(--color-text);
     text-decoration: none;
