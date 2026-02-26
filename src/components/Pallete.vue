@@ -1,27 +1,249 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { ref, computed } from 'vue';
+import { pallete } from '../theme/pallete';
+
+type VariantKey = keyof typeof pallete.colors;
+
+const activeVariant = ref<VariantKey>('zero');
+
+const variants: { key: VariantKey; label: string }[] = [
+    { key: 'zero', label: 'Zero' },
+    { key: 'mist', label: 'Mist' },
+    { key: 'peak', label: 'Peak' },
+];
+
+const colorEntries = computed(() => {
+    const colors = pallete.colors[activeVariant.value];
+    return Object.entries(colors).map(([key, value]) => {
+        const hex = value as string;
+        const label = key.replace(/([A-Z])/g, ' $1').replace(/^./, s => s.toUpperCase());
+        const { r, g, b } = hexToRgb(hex);
+        const { h, s, l } = hexToHsl(hex);
+        return {
+            key,
+            label,
+            hex,
+            rgb: `rgb(${r}, ${g}, ${b})`,
+            hsl: `hsl(${h}deg, ${s}%, ${l}%)`,
+        };
+    });
+});
+
+function hexToRgb(hex: string) {
+    const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+    return result
+        ? { r: parseInt(result[1], 16), g: parseInt(result[2], 16), b: parseInt(result[3], 16) }
+        : { r: 0, g: 0, b: 0 };
+}
+
+function hexToHsl(hex: string) {
+    const { r, g, b } = hexToRgb(hex);
+    const rn = r / 255, gn = g / 255, bn = b / 255;
+    const max = Math.max(rn, gn, bn), min = Math.min(rn, gn, bn);
+    let h = 0, s = 0;
+    const l = (max + min) / 2;
+
+    if (max !== min) {
+        const d = max - min;
+        s = l > 0.5 ? d / (2 - max - min) : d / (max + min);
+        switch (max) {
+            case rn: h = ((gn - bn) / d + (gn < bn ? 6 : 0)) / 6; break;
+            case gn: h = ((bn - rn) / d + 2) / 6; break;
+            case bn: h = ((rn - gn) / d + 4) / 6; break;
+        }
+    }
+
+    return {
+        h: Math.round(h * 360),
+        s: Math.round(s * 100),
+        l: Math.round(l * 100),
+    };
+}
+
+function toProperCase(str: string) {
+    return str.replace(/\b\w/g, l => l.toUpperCase());
+}
+</script>
 
 <template>
     <div class="pallete">
-        <h3>Pallete</h3>
-        <div class="pallete-content">
-            <div class="pallete-item">
-                <div class="pallete-item-color"></div>
-                <div class="pallete-item-name"></div>
+        <header>
+            <h4>Pallete</h4>
+            <p>{{ pallete.description }}</p>
+        </header>
+        <section>
+            <div class="pallete-header">
+                <h3>{{ pallete.name }} {{ toProperCase(activeVariant) }}</h3>
+                <div class="variant-tabs">
+                    <button v-for="v in variants" :key="v.key"
+                        :class="['variant-tab', { active: activeVariant === v.key }]" @click="activeVariant = v.key">
+                        {{ v.label }}
+                    </button>
+                </div>
             </div>
-        </div>
-    </div>  
+
+            <table class="pallete-table">
+                <thead>
+                    <tr>
+                        <th class="col-role">Role</th>
+                        <th class="col-hex">Hex</th>
+                        <th class="col-rgb">RGB</th>
+                        <th class="col-hsl">HSL</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr v-for="color in colorEntries" :key="color.key">
+                        <td class="col-role">
+                            <span class="color-swatch" :style="{ backgroundColor: color.hex }"></span>
+                            <span class="color-name">{{ color.label }}</span>
+                        </td>
+                        <td class="col-hex">{{ color.hex }}</td>
+                        <td class="col-rgb">{{ color.rgb }}</td>
+                        <td class="col-hsl">{{ color.hsl }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </div>
 </template>
 
 <style lang="scss">
+header {
+    @include flex-column;
+    margin: $spacing-3xl $spacing-4xl;
 
-.pallete {
-    @include flex-center;
-    margin: 0 $spacing-4xl;
-    display: flex;
-    gap: 10px;
-    .pallete-content {
-        flex-direction: column;
-        gap: 10px;
+    h4 {
+        font-size: $font-size-lg;
+        font-weight: $font-weight-bold;
+        color: var(--color-text);
+        margin: 0;
     }
+}
+
+section {
+    background-color: var(--color-base);
+    border-radius: $radius-lg;
+    padding: $spacing-lg $spacing-xl;
+    margin: $spacing-3xl $spacing-4xl;
+    border: 1px solid var(--color-overlay);
+}
+
+.pallete-header {
+    @include flex-between;
+    margin-bottom: $spacing-lg;
+
+    h3 {
+        font-size: $font-size-lg;
+        font-weight: $font-weight-bold;
+        color: var(--color-text);
+        margin: 0;
+    }
+}
+
+.variant-tabs {
+    display: flex;
+    gap: $spacing-xs;
+    background-color: var(--color-surface);
+    border-radius: $radius-md;
+    padding: 3px;
+
+    .variant-tab {
+        padding: $spacing-xs $spacing-md;
+        border: none;
+        border-radius: $radius-md;
+        background: transparent;
+        color: var(--color-subtle);
+        font-size: $font-size-sm;
+        font-family: $font-family-base;
+        cursor: pointer;
+        transition: all $transition-fast;
+
+        &:hover {
+            color: var(--color-text);
+        }
+
+        &.active {
+            background-color: var(--color-overlay);
+            color: var(--color-text);
+        }
+    }
+}
+
+.pallete-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: $font-family-mono;
+    font-size: $font-size-sm;
+
+    thead {
+        th {
+            padding: $spacing-sm $spacing-md;
+            text-align: left;
+            color: var(--color-subtle);
+            font-weight: $font-weight-semibold;
+            font-family: $font-family-base;
+            font-size: $font-size-xs;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            border-bottom: 1px solid var(--color-overlay);
+
+            &.col-rgb,
+            &.col-hsl {
+                text-align: right;
+            }
+
+            &.col-hex {
+                text-align: center;
+            }
+        }
+    }
+
+    tbody {
+        tr {
+            transition: background-color $transition-fast;
+
+            &:hover {
+                background-color: var(--color-surface);
+            }
+
+            td {
+                padding: $spacing-sm $spacing-md;
+                color: var(--color-text);
+                border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+
+                &.col-role {
+                    display: flex;
+                    align-items: center;
+                    gap: $spacing-md;
+                }
+
+                &.col-hex {
+                    text-align: center;
+                }
+
+                &.col-rgb {
+                    text-align: right;
+                }
+
+                &.col-hsl {
+                    text-align: right;
+                }
+            }
+        }
+    }
+}
+
+.color-swatch {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.color-name {
+    font-family: $font-family-base;
+    font-weight: $font-weight-medium;
+    color: var(--color-text);
 }
 </style>

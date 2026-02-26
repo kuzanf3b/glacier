@@ -15,7 +15,7 @@
 footer {
   @include flex-between;
   height: 5vh;
-  margin: 0 $spacing-4xl;
+  margin: $spacing-md $spacing-4xl;
 
   p {
     color: var(--color-subtle);
