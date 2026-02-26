@@ -21,6 +21,7 @@
 
 .navbar {
   @include flex-between;
+  margin: 0 $sidebar-width;
   padding: $spacing-md;
 }
 

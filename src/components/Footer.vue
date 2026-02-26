@@ -15,9 +15,9 @@
 footer {
   @include flex-between;
   height: 5vh;
+  margin: 0 $spacing-4xl;
 
   p {
-    margin-left: $sidebar-width;
     color: var(--color-subtle);
     font-size: $font-size-sm;
     font-weight: $font-weight-semibold;

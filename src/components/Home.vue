@@ -13,7 +13,7 @@
 <style scoped lang="scss">
 
 .home {
-  margin: 0 $sidebar-width;
+  margin: 0 $spacing-4xl;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -29,7 +29,7 @@
 
   p {
     width: 600px;
-    font-size: $font-size-xl;
+    font-size: $font-size-lg;
     color: var(--color-subtle);
     margin-bottom: $spacing-xl;
   }
