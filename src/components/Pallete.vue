@@ -14,8 +14,11 @@ const variants: { key: VariantKey; label: string }[] = [
 
 const colorEntries = computed(() => {
     const colors = pallete.colors[activeVariant.value];
+
+    if (!colors) return [];
+
     return Object.entries(colors).map(([key, value]) => {
-        const hex = value as string;
+        const hex = value;
         const label = key.replace(/([A-Z])/g, ' $1').replace(/^./, s => s.toUpperCase());
         const { r, g, b } = hexToRgb(hex);
         const { h, s, l } = hexToHsl(hex);
@@ -32,7 +35,7 @@ const colorEntries = computed(() => {
 function hexToRgb(hex: string) {
     const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
     return result
-        ? { r: parseInt(result[1], 16), g: parseInt(result[2], 16), b: parseInt(result[3], 16) }
+        ? { r: parseInt(result[1]!, 16), g: parseInt(result[2]!, 16), b: parseInt(result[3]!, 16) }
         : { r: 0, g: 0, b: 0 };
 }
 
