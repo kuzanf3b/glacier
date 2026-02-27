@@ -5,7 +5,7 @@
 <template>
   <div class="home">
     <h1>Warmer Ice</h1>
-    <p>Glacier is a color palette generator that helps you create beautiful color schemes for your projects.</p>
+    <p>A mystical colorscheme frozen in time. Journey through an eternal winter of crystalline magic and midnight ink.</p>
     <router-link to="/pallete" class="btn">Discover →</router-link>
   </div>
 </template>
