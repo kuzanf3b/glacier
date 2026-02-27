@@ -1,6 +1,6 @@
 export const pallete = {
     name: "Glacier",
-    description: "A warmer ice colorscheme.",
+    description: "A mystical journey through frozen pastels and midnight ink.",
     colors: {
         zero: {
             base: "#13131C",    // Abyss
@@ -126,6 +126,21 @@ export const pallete = {
             subtitle: "Smells of groundedness",
             description: "**Diagnostic hints**, **Inline links**, **Merged and staged Git modifications**, and **Terminal magenta, bright magenta**.",
             tags: ["methods", "parameters"],
+        },
+        highlightLow: {
+            subtitle: "Low contrast highlight",
+            description: "Low contrast highlight for **background elements**.",
+            tags: ["comments"],
+        },
+        highlightMed: {
+            subtitle: "Medium contrast highlight",
+            description: "Medium contrast highlight for **background elements**.",
+            tags: ["comments"],
+        },
+        highlightHigh: {
+            subtitle: "High contrast highlight",
+            description: "High contrast highlight for **background elements**.",
+            tags: ["comments"],
         },
     },
 } as const;

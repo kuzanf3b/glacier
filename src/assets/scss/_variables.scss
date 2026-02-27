@@ -3,15 +3,13 @@
 // --- Glacier Zero (Dark) [Default] ---
 :root,
 [data-theme="zero"] {
-  // UI Base
-  --color-base:       #13131C;    // Abyss
-  --color-surface:    #1A1A27;    // Frost
-  --color-overlay:    #232333;    // Glacier
-  --color-muted:      #5B5B7E;    // Vapor
-  --color-subtle:     #8E8EAF;    // Mist
-  --color-text:       #E0E0ED;    // Crystal
+  --color-base:       #13131C;
+  --color-surface:    #1A1A27;
+  --color-overlay:    #232333;
+  --color-muted:      #5B5B7E;
+  --color-subtle:     #8E8EAF;
+  --color-text:       #E0E0ED;
 
-  // Accent
   --color-cyanide:    #89DCEB;
   --color-amber:      #F9E2AF;
   --color-petal:      #F5C2E7;
@@ -19,23 +17,20 @@
   --color-lilac:      #CBA6F7;
   --color-coral:      #F38BA8;
 
-  // Highlight
-  --color-highlight-low:   #1E1E2E;   // Aura Low
-  --color-highlight-med:   #313244;   // Aura Med
-  --color-highlight-high:  #45475A;   // Aura High
+  --color-highlight-low:   #1E1E2E;
+  --color-highlight-med:   #313244;
+  --color-highlight-high:  #45475A;
 }
 
 // --- Glacier Mist (Medium) ---
 [data-theme="mist"] {
-  // UI Base
-  --color-base:       #1E1E2E;    // Haze
-  --color-surface:    #252535;    // Cloud
-  --color-overlay:    #2F2F45;    // Spirit
-  --color-muted:      #6C7086;    // Ethereal
-  --color-subtle:     #9399B2;    // Ghost
-  --color-text:       #C2C6D9;    // Flow
+  --color-base:       #1E1E2E;
+  --color-surface:    #252535;
+  --color-overlay:    #2F2F45;
+  --color-muted:      #6C7086;
+  --color-subtle:     #9399B2;
+  --color-text:       #C2C6D9;
 
-  // Accent
   --color-cyanide:    #89D1DD;
   --color-amber:      #E5D5B1;
   --color-petal:      #E1B0D0;
@@ -43,23 +38,20 @@
   --color-lilac:      #C2B3E1;
   --color-coral:      #E0A3AD;
 
-  // Highlight
-  --color-highlight-low:   #2A2A3C;   // Veil Low
-  --color-highlight-med:   #3E3E56;   // Veil Med
-  --color-highlight-high:  #525270;   // Veil High
+  --color-highlight-low:   #2A2A3C;
+  --color-highlight-med:   #3E3E56;
+  --color-highlight-high:  #525270;
 }
 
 // --- Glacier Peak (Light) ---
 [data-theme="peak"] {
-  // UI Base
-  --color-base:       #F2F2F7;    // Summit
-  --color-surface:    #E6E6F0;    // Slope
-  --color-overlay:    #D9D9E8;    // Ridge
-  --color-muted:      #9494B8;    // Snow
-  --color-subtle:     #62628A;    // Pebble
-  --color-text:       #1A1A27;    // Ink
+  --color-base:       #F2F2F7;
+  --color-surface:    #E6E6F0;
+  --color-overlay:    #D9D9E8;
+  --color-muted:      #9494B8;
+  --color-subtle:     #62628A;
+  --color-text:       #1A1A27;
 
-  // Accent
   --color-cyanide:    #179299;
   --color-amber:      #A67C00;
   --color-petal:      #B31E8D;
@@ -67,10 +59,9 @@
   --color-lilac:      #7287FD;
   --color-coral:      #D20F39;
 
-  // Highlight
-  --color-highlight-low:   #E8E8F4;   // Ice Low
-  --color-highlight-med:   #D0D0E8;   // Ice Med
-  --color-highlight-high:  #B8B8D8;   // Ice High
+  --color-highlight-low:   #E8E8F4;
+  --color-highlight-med:   #D0D0E8;
+  --color-highlight-high:  #B8B8D8;
 }
 
 // --- Typography ---

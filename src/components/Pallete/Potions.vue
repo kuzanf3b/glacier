@@ -240,7 +240,7 @@ async function copyToClipboard(value: string, key: string) {
 
                 .copyable {
                     cursor: pointer;
-                    padding: $spacing-3xs $spacing-sm;
+                    padding: $spacing-2xs $spacing-sm;
                     border-radius: $radius-md;
                     transition: all $transition-fast;
                     margin: 0;

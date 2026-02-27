@@ -175,7 +175,7 @@ async function copyToClipboard(value: string, key: string) {
     font-size: $font-size-sm;
     color: var(--color-subtle);
     line-height: $line-height-base;
-    margin: 0;
+    margin-bottom: $spacing-lg;
     flex-grow: 1;
 
     :deep(strong) {
