@@ -133,8 +133,8 @@ async function copyToClipboard(value: string, key: string) {
     position: relative;
 
     .swatch-dot {
-        width: 16px;
-        height: 16px;
+        width: 30px;
+        height: 30px;
         border-radius: 50%;
         display: block;
         border: 1px solid rgba(255, 255, 255, 0.1);

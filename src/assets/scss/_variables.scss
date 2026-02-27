@@ -22,46 +22,46 @@
   --color-highlight-high:  #45475A;
 }
 
-// --- Glacier Mist (Medium) ---
+// --- Glacier Mist (Dark Soft) ---
 [data-theme="mist"] {
-  --color-base:       #1E1E2E;
-  --color-surface:    #252535;
-  --color-overlay:    #2F2F45;
-  --color-muted:      #6C7086;
-  --color-subtle:     #9399B2;
-  --color-text:       #C2C6D9;
+  --color-base:       #1A1B26;
+  --color-surface:    #212334;
+  --color-overlay:    #2A2D42;
+  --color-muted:      #6B7095;
+  --color-subtle:     #A0A6C8;
+  --color-text:       #D8DBEE;
 
-  --color-cyanide:    #89D1DD;
-  --color-amber:      #E5D5B1;
-  --color-petal:      #E1B0D0;
-  --color-leaf:       #B4D5B0;
-  --color-lilac:      #C2B3E1;
-  --color-coral:      #E0A3AD;
+  --color-cyanide:    #7BC6D9;
+  --color-amber:      #E6C98F;
+  --color-petal:      #E8B8DD;
+  --color-leaf:       #8FD3A3;
+  --color-lilac:      #B89AF3;
+  --color-coral:      #E79AAE;
 
-  --color-highlight-low:   #2A2A3C;
-  --color-highlight-med:   #3E3E56;
-  --color-highlight-high:  #525270;
+  --color-highlight-low:   #23263A;
+  --color-highlight-med:   #2C2F46;
+  --color-highlight-high:  #35395A;
 }
 
-// --- Glacier Peak (Light) ---
+// --- Glacier Peak (Bright Crisp) ---
 [data-theme="peak"] {
-  --color-base:       #F2F2F7;
-  --color-surface:    #E6E6F0;
-  --color-overlay:    #D9D9E8;
-  --color-muted:      #9494B8;
-  --color-subtle:     #62628A;
-  --color-text:       #1A1A27;
+  --color-base:       #FFFFFF;
+  --color-surface:    #F2F4FA;
+  --color-overlay:    #E4E7F3;
+  --color-muted:      #686D98;
+  --color-subtle:     #3B3F66;
+  --color-text:       #10131F;
 
-  --color-cyanide:    #179299;
-  --color-amber:      #A67C00;
-  --color-petal:      #B31E8D;
-  --color-leaf:       #40A02B;
-  --color-lilac:      #7287FD;
-  --color-coral:      #D20F39;
+  --color-cyanide:    #1FA9D6;
+  --color-amber:      #E0B044;
+  --color-petal:      #E36BD4;
+  --color-leaf:       #43C05A;
+  --color-lilac:      #8F5CFF;
+  --color-coral:      #E1486E;
 
-  --color-highlight-low:   #E8E8F4;
-  --color-highlight-med:   #D0D0E8;
-  --color-highlight-high:  #B8B8D8;
+  --color-highlight-low:   #EEF1F8;
+  --color-highlight-med:   #DADFF0;
+  --color-highlight-high:  #C6CCE2;
 }
 
 // --- Typography ---
