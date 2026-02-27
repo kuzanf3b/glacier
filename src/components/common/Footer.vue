@@ -1,13 +1,13 @@
 <script setup lang="ts">
-
+const currentYear: number = new Date().getFullYear();
 </script>
 
 <template>
   <footer>
-    <p>Copyright &copy; 2024 Glacier</p>
+    <p>Copyright &copy; {{ currentYear }} Glacier</p>
     <a class="icon" href="https://github.com/kuzanf3b/glacier.git"><img src="@/assets/svg/github.svg"
         alt="github"></a>
-  </footer> 
+  </footer>
 </template>
 
 <style scoped lang="scss">
