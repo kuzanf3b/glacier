@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref, computed } from 'vue';
-import { pallete } from '../theme/pallete';
+import { pallete } from '@/theme/pallete';
 
 type VariantKey = keyof typeof pallete.colors;
 
@@ -85,81 +85,63 @@ async function copyToClipboard(value: string, key: string) {
 </script>
 
 <template>
-    <div class="pallete">
-        <header>
-            <h4>Pallete</h4>
-            <p>{{ pallete.description }}</p>
-        </header>
-        <section>
-            <div class="pallete-header">
-                <h3>{{ pallete.name }} {{ toProperCase(activeVariant) }}</h3>
-                <div class="variant-tabs">
-                    <button v-for="v in variants" :key="v.key"
-                        :class="['variant-tab', { active: activeVariant === v.key }]" @click="activeVariant = v.key">
-                        {{ v.label }}
-                    </button>
-                </div>
+    <div class="potions">
+        <div class="potions-header">
+            <h3>{{ pallete.name }} {{ toProperCase(activeVariant) }}</h3>
+            <div class="variant-tabs">
+                <button v-for="v in variants" :key="v.key" :class="['variant-tab', { active: activeVariant === v.key }]"
+                    @click="activeVariant = v.key">
+                    {{ v.label }}
+                </button>
             </div>
+        </div>
 
-            <table class="pallete-table">
-                <thead>
-                    <tr>
-                        <th class="col-role">Role</th>
-                        <th class="col-hex">Hex</th>
-                        <th class="col-rgb">RGB</th>
-                        <th class="col-hsl">HSL</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr v-for="color in colorEntries" :key="color.key">
-                        <td class="col-role">
-                            <span class="color-swatch" :style="{ backgroundColor: color.hex }"></span>
-                            <span class="color-name">{{ color.label }}</span>
-                        </td>
-                        <td class="col-hex">
-                            <p class="copyable" @click="copyToClipboard(color.hex, color.key + '-hex')">
-                                {{ copiedKey === color.key + '-hex' ? 'Copied!' : color.hex }}
-                            </p>
-                        </td>
-                        <td class="col-rgb">
-                            <p class="copyable" @click="copyToClipboard(color.rgb, color.key + '-rgb')">
-                                {{ copiedKey === color.key + '-rgb' ? 'Copied!' : color.rgb }}
-                            </p>
-                        </td>
-                        <td class="col-hsl">
-                            <p class="copyable" @click="copyToClipboard(color.hsl, color.key + '-hsl')">
-                                {{ copiedKey === color.key + '-hsl' ? 'Copied!' : color.hsl }}
-                            </p>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-        </section>
+        <table class="collection-table">
+            <thead>
+                <tr>
+                    <th class="col-role">Role</th>
+                    <th class="col-hex">Hex</th>
+                    <th class="col-rgb">RGB</th>
+                    <th class="col-hsl">HSL</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr v-for="color in colorEntries" :key="color.key">
+                    <td class="col-role">
+                        <span class="color-swatch" :style="{ backgroundColor: color.hex }"></span>
+                        <span class="color-name">{{ color.label }}</span>
+                    </td>
+                    <td class="col-hex">
+                        <p class="copyable" @click="copyToClipboard(color.hex, color.key + '-hex')">
+                            {{ copiedKey === color.key + '-hex' ? 'Copied!' : color.hex }}
+                        </p>
+                    </td>
+                    <td class="col-rgb">
+                        <p class="copyable" @click="copyToClipboard(color.rgb, color.key + '-rgb')">
+                            {{ copiedKey === color.key + '-rgb' ? 'Copied!' : color.rgb }}
+                        </p>
+                    </td>
+                    <td class="col-hsl">
+                        <p class="copyable" @click="copyToClipboard(color.hsl, color.key + '-hsl')">
+                            {{ copiedKey === color.key + '-hsl' ? 'Copied!' : color.hsl }}
+                        </p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
     </div>
 </template>
 
 <style lang="scss">
-header {
-    @include flex-column;
-    margin: $spacing-3xl $spacing-4xl;
-
-    h4 {
-        font-size: $font-size-lg;
-        font-weight: $font-weight-bold;
-        color: var(--color-text);
-        margin: 0;
-    }
-}
-
-section {
-    background-color: var(--color-base);
+.potions {
+    border: 1px solid var(--color-overlay);
     border-radius: $radius-lg;
+    background-color: var(--color-base);
     padding: $spacing-lg $spacing-xl;
     margin: $spacing-3xl $spacing-4xl;
-    border: 1px solid var(--color-overlay);
 }
 
-.pallete-header {
+.potions-header {
     @include flex-between;
     margin-bottom: $spacing-lg;
 
@@ -175,13 +157,12 @@ section {
     display: flex;
     gap: $spacing-xs;
     background-color: var(--color-surface);
-    border-radius: $radius-md;
-    padding: 3px;
+    border-radius: $radius-lg;
 
     .variant-tab {
         padding: $spacing-xs $spacing-md;
         border: none;
-        border-radius: $radius-md;
+        border-radius: $radius-lg;
         background: transparent;
         color: var(--color-subtle);
         font-size: $font-size-sm;
@@ -195,12 +176,13 @@ section {
 
         &.active {
             background-color: var(--color-overlay);
+            box-shadow: 2px 0 0 0 var(--color-overlay);
             color: var(--color-text);
         }
     }
 }
 
-.pallete-table {
+.collection-table {
     width: 100%;
     border-collapse: collapse;
     font-family: $font-family-mono;
@@ -240,7 +222,6 @@ section {
             td {
                 padding: $spacing-sm $spacing-md;
                 color: var(--color-text);
-                border-bottom: 1px solid rgba(255, 255, 255, 0.04);
 
                 &.col-role {
                     display: flex;
@@ -259,18 +240,19 @@ section {
 
                 .copyable {
                     cursor: pointer;
-                    padding: $spacing-xs $spacing-sm;
+                    padding: $spacing-3xs $spacing-sm;
                     border-radius: $radius-md;
                     transition: all $transition-fast;
                     margin: 0;
                     display: inline-block;
 
                     &:hover {
-                        background-color: var(--color-overlay);
+                        box-shadow: 0 0 0 2px var(--color-petal);
                     }
 
                     &:active {
-                        transform: scale(0.96);
+                        background-color: var(--color-petal);
+                        transform: scale(1);
                     }
                 }
             }
