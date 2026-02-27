@@ -65,5 +65,67 @@ export const pallete = {
             highlightMed: "#D0D0E8",   // Ice Med
             highlightHigh: "#B8B8D8",  // Ice High
         }
-    }
+    },
+    roles: {
+        base: {
+            subtitle: "Primary background",
+            description: "Main and accessory panels—**application frames**, **sidebars**, **tabs**, and extensions to the focal context.",
+            tags: ["comments"],
+        },
+        surface: {
+            subtitle: "Secondary background atop base",
+            description: "Panels that are not directly related to the focal context—**cards**, **inputs**, and **status lines**.",
+            tags: ["operators", "punctuation"],
+        },
+        overlay: {
+            subtitle: "Tertiary background atop surface",
+            description: "Panels that are more temporary in nature—**popovers**, **notifications**, and **dialogs**.",
+            tags: ["variables"],
+        },
+        muted: {
+            subtitle: "Low contrast foreground",
+            description: "Ignored content—**disabled elements** and **unfocused text**.",
+            tags: ["comments"],
+        },
+        subtle: {
+            subtitle: "Medium contrast foreground",
+            description: "Secondary content—**comments**, **punctuation**, and **tab names**.",
+            tags: ["operators", "punctuation"],
+        },
+        text: {
+            subtitle: "High contrast foreground",
+            description: "Primary content—**normal text**, **variables**, and **active content**.",
+            tags: ["variables"],
+        },
+        coral: {
+            subtitle: "Per favore ama tutti",
+            description: "**Diagnostic errors**, **Deleted Git files**, and **Terminal red, bright red**.",
+            tags: ["builtins"],
+        },
+        amber: {
+            subtitle: "Lemon tea on a summer morning",
+            description: "**Diagnostic warnings** and **Terminal yellow, bright yellow**.",
+            tags: ["strings"],
+        },
+        petal: {
+            subtitle: "A beautiful yet cautious blossom",
+            description: "**Matching search background** paired with base foreground, **Modified Git files**, and **Terminal cyan, bright cyan**.",
+            tags: ["booleans", "functions"],
+        },
+        leaf: {
+            subtitle: "Fresh winter greenery",
+            description: "**Renamed Git files** and **Terminal green, bright green**.",
+            tags: ["conditionals", "keywords"],
+        },
+        cyanide: {
+            subtitle: "Saltwater tidepools",
+            description: "**Diagnostic information**, **Git additions**, and **Terminal blue, bright blue**.",
+            tags: ["keys", "tags", "types"],
+        },
+        lilac: {
+            subtitle: "Smells of groundedness",
+            description: "**Diagnostic hints**, **Inline links**, **Merged and staged Git modifications**, and **Terminal magenta, bright magenta**.",
+            tags: ["methods", "parameters"],
+        },
+    },
 } as const;
