@@ -79,11 +79,11 @@ onBeforeUnmount(() => {
 
 .theme-button {
   @include flex-center;
-  width: 42px;
-  height: 42px;
+  width: 34px;
+  height: 34px;
   border: none;
   border-radius: $radius-pill;
-  background-color: var(--color-surface);
+  background-color: transparent;
   cursor: pointer;
   transition: background-color $transition-fast;
 

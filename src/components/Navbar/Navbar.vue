@@ -11,31 +11,46 @@ const items: NavItem[] = [
 </script>
 
 <template>
-  <nav class="pill-nav-wrapper">
-    <div class="pill-nav">
-      <NavLogo />
-      <NavPills :items="items" />
-      <ThemeSwitcher />
+  <nav class="navbar-wrapper">
+    <div class="navbar">
+      <div class="navbar-start">
+        <NavLogo />
+      </div>
+      <div class="navbar-end">
+        <NavPills :items="items" />
+        <ThemeSwitcher />
+      </div>
     </div>
   </nav>
 </template>
 
 <style scoped lang="scss">
-.pill-nav-wrapper {
-  position: fixed;
+.navbar-wrapper {
+  position: relative;
   top: $spacing-md;
   left: 0;
   right: 0;
-  z-index: $z-sticky;
   display: flex;
   justify-content: center;
   pointer-events: none;
+  padding: 0 $spacing-xl;
 }
 
-.pill-nav {
-  display: flex;
-  align-items: center;
-  gap: $spacing-sm;
+.navbar {
+  @include flex-between;
+  width: 100%;
+  padding: $spacing-sm $spacing-lg;
+  margin: 0 $spacing-2xl;
+  border-radius: $radius-xl;
   pointer-events: auto;
+}
+
+.navbar-start {
+  @include flex-center;
+}
+
+.navbar-end {
+  @include flex-center;
+  gap: $spacing-md;
 }
 </style>
