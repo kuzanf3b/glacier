@@ -48,7 +48,7 @@ const schemes = [
 
 <style scoped lang="scss">
 .home {
-  margin: 0 $spacing-4xl;
+  margin: $spacing-4xl $spacing-4xl;
   display: flex;
   flex-direction: row;
   align-items: center;
