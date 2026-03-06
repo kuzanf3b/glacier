@@ -27,13 +27,17 @@ const filteredPorts = computed(() => {
         return matchesSearch && matchesCategory;
     });
 });
+
+const totalPorts = computed(() => {
+    return allPorts.value.length;
+})
 </script>
 
 <template>
     <div class="ports-page">
         <header class="head">
             <h4>Ports</h4>
-            <p>Manage your ports</p>
+            <p>Glacier provides <b>{{ totalPorts }}</b> ports.</p>
         </header>
         <section>
             <aside class="sidebar">
@@ -99,6 +103,7 @@ const filteredPorts = computed(() => {
     }
 
     p {
+        font-style: italic;
         font-size: $font-size-sm;
         color: var(--color-subtle);
     }
