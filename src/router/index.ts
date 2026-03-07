@@ -1,8 +1,8 @@
 import { createRouter, createWebHistory } from "vue-router";
 import Home from "../components/Home/Home.vue";
-import Pallete from "../components/Pallete/Pallete.vue";
-import Collections from "../components/Pallete/Collections.vue";
-import Potions from "../components/Pallete/Potions.vue";
+import Palette from "../components/Palette/Palette.vue";
+import Collections from "../components/Palette/Collections.vue";
+import Potions from "../components/Palette/Potions.vue";
 import Ports from "../components/Ports/Ports.vue";
 
 const router = createRouter({
@@ -14,8 +14,8 @@ const router = createRouter({
             component: Home,
         },
         {
-            path: "/pallete",
-            component: Pallete,
+            path: "/palette",
+            component: Palette,
             redirect: { name: "Collections" },
             children: [
                 {

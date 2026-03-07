@@ -1,33 +1,40 @@
 <script setup lang="ts">
 import { onBeforeUnmount, onMounted, ref, useTemplateRef } from "vue";
 
-type Theme = "zero" | "mist" | "peak";
-
 const themes = ["zero", "mist", "peak"] as const;
+type Theme = (typeof themes)[number];
+
 const currentTheme = ref<Theme>("zero");
 const showThemeMenu = ref(false);
 
-const setTheme = (theme: Theme) => {
+const buttonRef = useTemplateRef<HTMLButtonElement>("buttonRef");
+const menuRef = useTemplateRef<HTMLDivElement>("menuRef");
+
+const applyTheme = (theme: Theme) => {
   currentTheme.value = theme;
   document.documentElement.setAttribute("data-theme", theme);
-  showThemeMenu.value = false;
   localStorage.setItem("glacier-theme", theme);
+};
+
+const setTheme = (theme: Theme) => {
+  applyTheme(theme);
+  showThemeMenu.value = false;
 };
 
 const toggleThemeMenu = () => {
   showThemeMenu.value = !showThemeMenu.value;
 };
 
-const buttonRef = useTemplateRef<HTMLButtonElement>("buttonRef");
-const menuRef = useTemplateRef<HTMLDivElement>("menuRef");
-
 const handleClickOutside = (e: MouseEvent) => {
+  const target = e.target as Node | null;
+
   if (
     showThemeMenu.value &&
     buttonRef.value &&
     menuRef.value &&
-    !buttonRef.value.contains(e.target as Node) &&
-    !menuRef.value.contains(e.target as Node)
+    target &&
+    !buttonRef.value.contains(target) &&
+    !menuRef.value.contains(target)
   ) {
     showThemeMenu.value = false;
   }
@@ -35,10 +42,13 @@ const handleClickOutside = (e: MouseEvent) => {
 
 onMounted(() => {
   const saved = localStorage.getItem("glacier-theme");
+
   if (saved && themes.includes(saved as Theme)) {
-    currentTheme.value = saved;
+    applyTheme(saved as Theme);
+  } else {
+    applyTheme("zero");
   }
-  document.documentElement.setAttribute("data-theme", currentTheme.value);
+
   document.addEventListener("click", handleClickOutside);
 });
 
@@ -95,6 +105,7 @@ onBeforeUnmount(() => {
     </div>
 
     <h1>Oh, the weather outside is frightful!</h1>
+
     <p>
       A mystical colorscheme frozen in time. Journey through an eternal winter
       of crystalline magic and midnight ink.
@@ -104,11 +115,12 @@ onBeforeUnmount(() => {
       <router-link to="/ports" class="home-hero__btn home-hero__btn--primary">
         Ports
       </router-link>
+
       <router-link
-        to="/pallete"
+        to="/palette"
         class="home-hero__btn home-hero__btn--secondary"
       >
-        Pallete
+        Palette
       </router-link>
     </div>
   </div>
