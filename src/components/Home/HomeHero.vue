@@ -104,11 +104,11 @@ onBeforeUnmount(() => {
       </Transition>
     </div>
 
-    <h1>Oh, the weather outside is frightful!</h1>
+    <h1>Where Midnight Ink Meets the Stars.</h1>
 
     <p>
-      A mystical colorscheme frozen in time. Journey through an eternal winter
-      of crystalline magic and midnight ink.
+      Experience the silence of the Arctic Abyss. A palette born from
+      crystalline mana to soothe your eyes and sharpen your focus.
     </p>
 
     <div class="home-hero__actions">
@@ -259,7 +259,7 @@ onBeforeUnmount(() => {
     }
 
     &--primary {
-      background-color: var(--color-text);
+      background-color: var(--color-cyanide);
       color: var(--color-base);
 
       &:hover {
