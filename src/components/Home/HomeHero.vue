@@ -82,7 +82,7 @@ onBeforeUnmount(() => {
           <rect x="6" y="11" width="4" height="4" rx="1" fill="currentColor" />
           <rect x="11" y="11" width="4" height="4" rx="1" fill="currentColor" />
         </svg>
-        New Background
+        Themes
       </button>
 
       <Transition name="theme-fade">
