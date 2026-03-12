@@ -235,14 +235,14 @@ const setupFn = () => {
     const w = container.offsetWidth,
       h = container.offsetHeight;
     renderer.setSize(w, h);
-    material.uniforms.uResolution.value.set(w, h);
+    material.uniforms.uResolution!.value.set(w, h);
   };
   window.addEventListener("resize", handleResize);
 
   const startTime = performance.now();
   const animate = () => {
     animationRef.value = requestAnimationFrame(animate);
-    material.uniforms.uTime.value = (performance.now() - startTime) * 0.001;
+    material.uniforms.uTime!.value = (performance.now() - startTime) * 0.001;
     renderer.render(scene, camera);
   };
   animate();
