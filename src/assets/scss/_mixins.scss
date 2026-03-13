@@ -5,13 +5,21 @@
 // --- Responsive Breakpoints ---
 @mixin respond-to($breakpoint) {
   @if $breakpoint == sm {
-    @media (min-width: $breakpoint-sm) { @content; }
+    @media (min-width: $breakpoint-sm) {
+      @content;
+    }
   } @else if $breakpoint == md {
-    @media (min-width: $breakpoint-md) { @content; }
+    @media (min-width: $breakpoint-md) {
+      @content;
+    }
   } @else if $breakpoint == lg {
-    @media (min-width: $breakpoint-lg) { @content; }
+    @media (min-width: $breakpoint-lg) {
+      @content;
+    }
   } @else if $breakpoint == xl {
-    @media (min-width: $breakpoint-xl) { @content; }
+    @media (min-width: $breakpoint-xl) {
+      @content;
+    }
   }
 }
 
@@ -50,7 +58,9 @@
 // --- Interactive Element ---
 @mixin interactive($radius: $radius-md) {
   border-radius: $radius;
-  transition: background-color $transition-base, box-shadow $transition-base;
+  transition:
+    background-color $transition-base,
+    box-shadow $transition-base;
   cursor: pointer;
 
   &:hover {
@@ -58,7 +68,7 @@
   }
 
   &:focus-visible {
-    outline: 2px solid var(--color-petal);
+    outline: 2px solid var(--color-stream);
     outline-offset: 2px;
   }
 }

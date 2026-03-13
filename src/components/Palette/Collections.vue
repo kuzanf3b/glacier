@@ -233,9 +233,9 @@ async function copyToClipboard(value: string, key: string) {
     border-color: var(--color-amber);
   }
 
-  &.tag-petal {
-    color: var(--color-petal);
-    border-color: var(--color-petal);
+  &.tag-stream {
+    color: var(--color-stream);
+    border-color: var(--color-stream);
   }
 
   &.tag-leaf {

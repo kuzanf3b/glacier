@@ -3,131 +3,131 @@
 // --- Glacier Zero (Dark) [Default] ---
 :root,
 [data-theme="zero"] {
-  --color-base:       #13131C;
-  --color-surface:    #1A1A27;
-  --color-overlay:    #232333;
-  --color-muted:      #5B5B7E;
-  --color-subtle:     #8E8EAF;
-  --color-text:       #E0E0ED;
+  --color-base: #13131c;
+  --color-surface: #1b1b24;
+  --color-overlay: #24252e;
+  --color-muted: #62647a;
+  --color-subtle: #8f92a8;
+  --color-text: #e6e8f2;
 
-  --color-cyanide:    #89DCEB;
-  --color-amber:      #F9E2AF;
-  --color-petal:      #F5C2E7;
-  --color-leaf:       #A6E3A1;
-  --color-lilac:      #CBA6F7;
-  --color-coral:      #F38BA8;
+  --color-cyanide: #89dceb;
+  --color-amber: #f9e2af;
+  --color-stream: #5fc3d6;
+  --color-leaf: #a6e3a1;
+  --color-lilac: #cba6f7;
+  --color-coral: #f38ba8;
 
-  --color-highlight-low:   #1E1E2E;
-  --color-highlight-med:   #313244;
-  --color-highlight-high:  #45475A;
+  --color-highlight-low: #1e1f28;
+  --color-highlight-med: #30313c;
+  --color-highlight-high: #444655;
 }
 
 // --- Glacier Mist (Dark Soft) ---
 [data-theme="mist"] {
-  --color-base:       #1A1B26;
-  --color-surface:    #212334;
-  --color-overlay:    #2A2D42;
-  --color-muted:      #6B7095;
-  --color-subtle:     #A0A6C8;
-  --color-text:       #D8DBEE;
+  --color-base: #1a1b26;
+  --color-surface: #1f212a;
+  --color-overlay: #282b34;
+  --color-muted: #676c82;
+  --color-subtle: #9aa0b5;
+  --color-text: #e4e7f2;
 
-  --color-cyanide:    #7BC6D9;
-  --color-amber:      #E6C98F;
-  --color-petal:      #E8B8DD;
-  --color-leaf:       #8FD3A3;
-  --color-lilac:      #B89AF3;
-  --color-coral:      #E79AAE;
+  --color-cyanide: #89dceb;
+  --color-amber: #f9e2af;
+  --color-stream: #5fc3d6;
+  --color-leaf: #a6e3a1;
+  --color-lilac: #cba6f7;
+  --color-coral: #f38ba8;
 
-  --color-highlight-low:   #23263A;
-  --color-highlight-med:   #2C2F46;
-  --color-highlight-high:  #35395A;
+  --color-highlight-low: #23252e;
+  --color-highlight-med: #31343e;
+  --color-highlight-high: #444854;
 }
 
 // --- Glacier Peak (Bright Crisp) ---
 [data-theme="peak"] {
-  --color-base:       #F4F6FB;
-  --color-surface:    #E8EBF5;
-  --color-overlay:    #D9DFF0;
-  --color-muted:      #7A82A6;
-  --color-subtle:     #4E5478;
-  --color-text:       #141826;
+  --color-base: #f4f6fb;
+  --color-surface: #e8ebf3;
+  --color-overlay: #dce1ec;
+  --color-muted: #7a819a;
+  --color-subtle: #4c5166;
+  --color-text: #141826;
 
-  --color-cyanide:    #49A9BF;
-  --color-amber:      #C2A14A;
-  --color-petal:      #C98BBE;
-  --color-leaf:       #56A069;
-  --color-lilac:      #8C6BDB;
-  --color-coral:      #C25E76;
+  --color-cyanide: #5cbfd6;
+  --color-amber: #d9b75a;
+  --color-stream: #4fafc3;
+  --color-leaf: #66b97b;
+  --color-lilac: #a182f0;
+  --color-coral: #d8728a;
 
-  --color-highlight-low:   #EEF1F8;
-  --color-highlight-med:   #DDE2F2;
-  --color-highlight-high:  #CBD1E6;
+  --color-highlight-low: #eef1f8;
+  --color-highlight-med: #dadff0;
+  --color-highlight-high: #c6cce2;
 }
 
 // --- Typography ---
-$font-family-base: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-$font-family-mono: 'Cascadia Code', 'Fira Code', monospace;
+$font-family-base: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+$font-family-mono: "Cascadia Code", "Fira Code", monospace;
 
-$font-size-xs:   0.75rem;   // 12px
-$font-size-sm:   0.875rem;  // 14px
-$font-size-base: 1rem;      // 16px
-$font-size-md:   1.125rem;  // 18px
-$font-size-lg:   1.25rem;   // 20px
-$font-size-xl:   1.5rem;    // 24px
-$font-size-2xl:  2rem;      // 32px
-$font-size-3xl:  3rem;      // 48px
-$font-size-4xl:  5rem;      // 80px
+$font-size-xs: 0.75rem; // 12px
+$font-size-sm: 0.875rem; // 14px
+$font-size-base: 1rem; // 16px
+$font-size-md: 1.125rem; // 18px
+$font-size-lg: 1.25rem; // 20px
+$font-size-xl: 1.5rem; // 24px
+$font-size-2xl: 2rem; // 32px
+$font-size-3xl: 3rem; // 48px
+$font-size-4xl: 5rem; // 80px
 
-$font-weight-regular:  400;
-$font-weight-medium:   500;
+$font-weight-regular: 400;
+$font-weight-medium: 500;
 $font-weight-semibold: 600;
-$font-weight-bold:     700;
+$font-weight-bold: 700;
 
-$line-height-tight:  1.2;
-$line-height-base:   1.5;
-$line-height-loose:  1.75;
+$line-height-tight: 1.2;
+$line-height-base: 1.5;
+$line-height-loose: 1.75;
 
 // --- Spacing ---
 $spacing-3xs: 0.0625rem; // 1px
 $spacing-2xs: 0.125rem; // 2px
-$spacing-xs:  0.25rem;  // 4px
-$spacing-sm:  0.5rem;   // 8px
-$spacing-md:  1rem;     // 16px
-$spacing-lg:  1.5rem;   // 24px
-$spacing-xl:  2rem;     // 32px
-$spacing-2xl: 3rem;     // 48px
-$spacing-3xl: 5rem;     // 80px
-$spacing-4xl: 7rem;     // 112px
+$spacing-xs: 0.25rem; // 4px
+$spacing-sm: 0.5rem; // 8px
+$spacing-md: 1rem; // 16px
+$spacing-lg: 1.5rem; // 24px
+$spacing-xl: 2rem; // 32px
+$spacing-2xl: 3rem; // 48px
+$spacing-3xl: 5rem; // 80px
+$spacing-4xl: 7rem; // 112px
 
 // --- Border Radius ---
-$radius-sm:   4px;
-$radius-md:   6px;
-$radius-lg:   12px;
-$radius-xl:   20px;
-$radius-pill:  9999px;
+$radius-sm: 4px;
+$radius-md: 6px;
+$radius-lg: 12px;
+$radius-xl: 20px;
+$radius-pill: 9999px;
 
 // --- Shadows ---
-$shadow-sm:  0 1px 2px rgba(0, 0, 0, 0.3);
-$shadow-md:  0 4px 8px rgba(0, 0, 0, 0.3);
-$shadow-lg:  0 8px 24px rgba(0, 0, 0, 0.4);
+$shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
+$shadow-md: 0 4px 8px rgba(0, 0, 0, 0.3);
+$shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.4);
 
 // --- Transitions ---
-$transition-fast:   0.15s ease;
-$transition-base:   0.3s ease;
-$transition-slow:   0.5s ease;
+$transition-fast: 0.15s ease;
+$transition-base: 0.3s ease;
+$transition-slow: 0.5s ease;
 
 // --- Z-Index ---
-$z-dropdown:  100;
-$z-sticky:    200;
-$z-overlay:   300;
-$z-modal:     400;
-$z-toast:     500;
+$z-dropdown: 100;
+$z-sticky: 200;
+$z-overlay: 300;
+$z-modal: 400;
+$z-toast: 500;
 
 // --- Breakpoints ---
-$breakpoint-sm:  576px;
-$breakpoint-md:  768px;
-$breakpoint-lg:  992px;
-$breakpoint-xl:  1200px;
+$breakpoint-sm: 576px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 992px;
+$breakpoint-xl: 1200px;
 
 // --- Layout ---
 $container-max-width: 1200px;

@@ -279,11 +279,11 @@ async function copyToClipboard(value: string, key: string) {
           display: inline-block;
 
           &:hover {
-            box-shadow: 0 0 0 2px var(--color-petal);
+            box-shadow: 0 0 0 2px var(--color-stream);
           }
 
           &:active {
-            background-color: var(--color-petal);
+            background-color: var(--color-stream);
             transform: scale(1);
           }
         }

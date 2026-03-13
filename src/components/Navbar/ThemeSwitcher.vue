@@ -115,7 +115,7 @@ onBeforeUnmount(() => {
   background: linear-gradient(
     135deg,
     var(--color-cyanide),
-    var(--color-petal),
+    var(--color-stream),
     var(--color-lilac)
   );
 }
