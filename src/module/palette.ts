@@ -10,12 +10,12 @@ export const palette = {
             subtle: "#8F92A8",
             text: "#E6E8F2",
 
-            cyanide: "#89DCEB",
-            stream: "#5FC3D6",
-            amber: "#F9E2AF",
+            cyanide: "#6ED4E6",
+            stream: "#47B8CF",
+            amber: "#F4D07E",
             leaf: "#A6E3A1",
-            lilac: "#CBA6F7",
-            coral: "#F38BA8",
+            lilac: "#B98EF5",
+            coral: "#F16C93",
 
             highlightLow: "#1E1F28",
             highlightMed: "#30313C",
@@ -24,22 +24,22 @@ export const palette = {
 
         mist: {
             base: "#1A1B26",
-            surface: "#1F212A",
-            overlay: "#282B34",
-            muted: "#676C82",
+            surface: "#20222D",
+            overlay: "#292C37",
+            muted: "#6A6F86",
             subtle: "#9AA0B5",
             text: "#E4E7F2",
 
-            cyanide: "#89DCEB",
-            stream: "#5FC3D6",
-            amber: "#F9E2AF",
-            leaf: "#A6E3A1",
-            lilac: "#CBA6F7",
-            coral: "#F38BA8",
+            cyanide: "#6ED4E6",
+            stream: "#47B8CF",
+            amber: "#F4D07E",
+            leaf: "#9EDB9A",
+            lilac: "#B98EF5",
+            coral: "#F16C93",
 
-            highlightLow: "#23252E",
-            highlightMed: "#31343E",
-            highlightHigh: "#444854",
+            highlightLow: "#242630",
+            highlightMed: "#323543",
+            highlightHigh: "#454959",
         },
 
         peak: {
@@ -50,12 +50,12 @@ export const palette = {
             subtle: "#4C5166",
             text: "#141826",
 
-            cyanide: "#5CBFD6",
-            stream: "#4FAFC3",
-            amber: "#D9B75A",
+            cyanide: "#45B7CF",
+            stream: "#3FA6BD",
+            amber: "#D4B35A",
             leaf: "#66B97B",
-            lilac: "#A182F0",
-            coral: "#D8728A",
+            lilac: "#9A78F2",
+            coral: "#D45C82",
 
             highlightLow: "#EEF1F8",
             highlightMed: "#DADFF0",
@@ -103,15 +103,15 @@ export const palette = {
             description: "Diagnostic warnings and terminal yellow.",
             tags: ["strings"],
         },
-        stream: {
-            subtitle: "Cold stream accent",
-            description: "Search highlights, modified Git files, and terminal cyan.",
-            tags: ["booleans", "functions"],
-        },
         leaf: {
             subtitle: "Fresh alpine green",
             description: "Renamed Git files and terminal green.",
             tags: ["conditionals", "keywords"],
+        },
+        stream: {
+            subtitle: "Cold stream accent",
+            description: "Search highlights, modified Git files, and terminal cyan.",
+            tags: ["booleans", "functions"],
         },
         cyanide: {
             subtitle: "Glacial water tone",
